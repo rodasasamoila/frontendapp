@@ -1,0 +1,164 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<!-- css on pc-->
+<link rel="stylesheet" type="text/css" href="home.css" media="screen" />
+<link rel="stylesheet" href="homepageCarousel.css" media="screen" />
+<link rel="stylesheet" href="buy.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="loginModal.css" media="screen"/>
+
+<div class="topnav">
+    <a href="home.html">Home</a>
+    
+    <a href="buy.html">Rent</a>
+          <a id="navUsername" style="visibility: hidden;float: right;"></a>
+          <a href="javascript:;" id="myBtn" style="visibility: visible;float: right;">Login</a>
+          <a href="javascript:;" id="logoutBtn" style="visibility: hidden;float: right;" onclick="Logout()">Logout</a>
+          <a id="administrate" href="listings.html" style="visibility:hidden">Listings</a>
+          <a id="addListing" href="addListing.html" style="visibility:hidden">Add Listings or Check Visits</a>
+  </div>
+  <div style="background-color: whitesmoke;">
+  <form id="addListingForm" style="margin-left: 25px;">
+    <label for="fname">Name:</label><br><br>
+    <input type="text" id="test" name="name"><br><br>
+    <label for="fname">Image link for Rent Page:</label><br><br>
+    <input type="text" id="test" name="imageLink"><br><br>
+    <label for="adress">Adress:</label><br><br>
+    <input type="text" id="fname" name="adress"><br><br>
+    <label for="description">Individual listing description:</label><br><br>
+    <input type="text" id="fname" name="description"><br><br>
+    <label for="smalldescription">Card description:</label><br><br>
+    <input type="text" id="fname" name="smalldescription"><br><br>
+    <label for="price">Price</label><br><br>
+    <input type="number" id="price" name="price"><br><br>
+    <label for="bathrooms">Bathrooms</label><br><br>
+    <input type="number" id="fname" name="bathrooms"><br><br>
+    <label for="garage">Garage:</label><br><br>
+    <input type="number" id="fname" name="garage"><br><br>
+  </form>
+</div>
+  <div class="containerButton" style="background-color: whitesmoke;">
+    <div class="centerButton">
+        <button id="ShowMore" type="button" class="btn btn-primary" onclick="AddListing()">Add listing</button>
+    </div>
+</div>
+<form id="addImageToCarousel" style="margin-left: 25px;background-color: whitesmoke;">
+    <label for="fname">Name of the listing:</label><br><br>
+    <input type="text" id="test" name="name"><br><br>
+    <label for="link">Image for the carousel on the individual listing:</label><br><br>
+    <input type="text" id="link" name="link"><br><br>
+    
+  </form>
+  <div class="containerButton" style="background-color: whitesmoke;">
+    <div class="centerButton">
+        <button id="ShowMore" type="button" class="btn btn-primary" onclick="AddImgToCarousel()">Add Image to Listing</button>
+    </div>
+</div>
+<div>
+    <table id="apps"></table>
+</div>
+  <div id="myModal" class="modal">
+    <span class="close">&times;</span>
+    
+      <!-- Modal content -->
+      <div class="modal-content">
+        
+    <div class="tab">
+      <button class="tablinks" onclick="ChangeTab(event, 'Login')">Login</button>
+      <button class="tablinks" onclick="ChangeTab(event, 'Register')">Register</button>
+    </div>
+    
+    <div id="Login" class="tabcontent">
+    
+      <div class="containerLogin"  id="Login">
+        <label for="uname"><b>Username</b></label><br>
+        <input id="UsernameLogin" type="text" placeholder="Enter Username" name="uname" required><br>
+    
+        <label for="psw"><b>Password</b></label><br>
+        <input id="PasswordLogin" type="password" placeholder="Enter Password" name="psw" required><br>
+          
+        <button type="submit" onclick="Login()">Login</button>
+      </div>
+    </div>
+    
+    <div id="Register" class="tabcontent">
+    
+     
+      <div class="containerLogin" id="Register">
+        <label for="uname" id="uname"><b>Username</b></label><br>
+        <input id="UsernameRegister" type="text" placeholder="Enter Username" name="uname" required><br>
+    
+        <label for="psw" id="psw"><b>Password</b></label><br>
+        <input id="PasswordRegister" type="password" placeholder="Enter Password" name="psw" required><br>
+    
+        <label for="pswagain"><b>Password again</b></label><br>
+        <input id="PasswordAgainRegister" type="password" placeholder="Enter Password" name="pswagain" required><br>
+    
+        <label for="email" id="email"><b>Email</b></label><br>
+        <input id="EmailRegister" type="text" placeholder="Enter Email" name="email" required><br>
+    
+        
+        <label for="sex"><b>Sex</b></label><br>
+        <select id="SexRegister" name="Sex" aria-placeholder="None">
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select>
+        <br><br>
+        
+        <button type="submit" onclick="Register()">Register</button>
+      </div>
+    </div>
+    
+    
+      </div>
+    
+    </div>
+    <div id="container">
+    </div>
+  <script src="login.js"></script>
+  <script src="administrate.js"></script>
+  <style>
+      
+      .form {
+    width: 80%;
+    margin-left: 20px;
+}
+
+.label{
+    /* In order to define widths */
+    width: 50% ;
+    margin-left: 50px;
+}
+.input {
+    /* In order to define widths */
+    display: inline-block;
+    width: 50% ;
+    margin-left: 50px;
+}
+input[type=text], input[type=password] {
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;}
+    table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+    </style>
+ 
