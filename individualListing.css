@@ -1,0 +1,31 @@
+.grid-container {
+    display: grid;
+    grid-template-rows: auto auto;
+  
+    padding: 10px;
+  }
+    .grid-item{
+        margin-top: 10px;
+      margin-left: 10px;
+     
+    }
+  
+        .titleListing{
+          margin-top: 10px;
+          letter-spacing: 2px;
+          font-size: 2em;
+          color: #3d97cf;
+          font-family: "AvenirNext LT Pro",Helvetica,sans-serif;
+          line-height: normal;
+          text-align: center;
+        }
+        .priceListing{
+          margin-top: 10px;
+          letter-spacing: 2px;
+          font-size: 1.8em;
+          color: #3d97cf;
+          font-family: "AvenirNext LT Pro",Helvetica,sans-serif;
+          line-height: normal;
+          text-align: right;
+          margin-right: 10px;
+        }
